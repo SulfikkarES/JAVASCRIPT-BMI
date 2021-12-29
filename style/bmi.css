@@ -1,0 +1,86 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+#head{
+width: 100%;
+height: 5%;
+}
+#tbl{
+    
+
+    border-color: orangered;
+    color: black;
+    background-color: lightgreen;
+    width: 50%;
+    align-items: center;
+    margin-left: 20%;
+    font-size: 16px;
+}
+#hd{
+    margin-left: 15px;
+    background-color: orangered;
+    padding: 6px 10px 6px 15px;
+    color: white;
+}
+#cmdbox{
+    align-items: center;
+    background-color: white;
+    width: 90%;
+}
+
+#hddgggg,#initial,#age,#weight,#descr{
+    text-align-last: justify;
+    background-color:lightgreen;
+    color: black;
+    width: 35%;
+    padding: 6px 10px 6px 15px;
+}
+#txtArea1,#txtArea2{
+    width: 85%;
+    height: 100%;
+}
+#btnButtton{
+
+    font-size: 15px;
+    margin-left: 60%;
+    padding: 6px 10px 6px 15px;
+
+}
+
+#ftrclr{
+    background-color:red;
+    width: 100%;
+    height: 50%;
+    
+    text-align: center;
+    font-size: 15px;
+    padding: 16px 10px 16px 15px;
+
+}
+#cmdbox,#txtName,#txtInitial,#txtArea2,#txtArea1
+{
+    width: 60%;
+}
+#txtArea2,#txtArea1{
+    height: 50%;
+}
+#txtBmi,#txtWeight,#txtHeight,#txtAge{
+    width:15% ;
+}
+#txtInitial,#txtAge,#txtWeight,#txtArea2{
+    background-color:white;
+    color: black;
+    
+    padding: 6px 10px 6px 15px;   
+}
+#btnButtton
+{
+    background-color: lightgrey;
+    border: 1px;
+}
+tr:nth-child(even) {
+    background-color: white;
+    
+    

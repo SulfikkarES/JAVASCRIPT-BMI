@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>bmi</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style/bmi.css">
+    </head>
+    <body>
+        
+        <header>
+            <img id="head" src="images/headerbanner.jpg" alt="header image is here">
+        </header>
+        <div>
+            <div>
+                <table id="tbl" border="2">
+                    <tr>
+                        <td id="hd" colspan="2">BMI Calculater</td>
+                    </tr>
+                    <tr>
+                        <td id="hddgggg">Salutation</td>
+                        <td id="cmdbox">
+                            <select id="cmdopsn" >
+                                <option >---Select---</option>
+                                <option>Mr</option>
+                                <option>Miss</option>
+                                <option>Mrs</option>
+                                <option>Prof</option>
+                                <option>Dr</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Full Name</td>
+                        <td><input type="text" name="txtName" id="txtName" max="150"></td>
+                    </tr>
+                    <tr>
+                        <td id="initial"> Initial</td>
+                        <td><input type="text" name="txtInitial" id="txtInitial" ></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td  ><textarea id="txtArea1"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td id="age">Age</td>
+                        <td><input type="number" name="txtAge" id="txtAge" min="10" max="100"></td>
+                    </tr>
+                    <tr>
+                        <td>Heigh in centimeter</td>
+                        <td><input type="number" name="txtHeight"  id="txtHeight" min="50" max="250"></td>
+  
+                    </tr>
+                    <tr>
+                        <td id="weight">Weight (Kilogram)</td>
+                        <td><input type="number" name="txtWeight" id="txtWeight" min="30" max="200"></td>
+                    </tr>
+                    <tr>
+                        <td>Body mass index</td>
+                        <td><input type="text" name="txtBmi" id="txtBmi"></td>
+                    </tr>
+                        <td id="descr">Description</td>
+                        <td ><textarea id="txtArea2"></textarea></td>
+                    <<tr>
+                       
+                        
+                        
+                        <tr>
+                            <td align="left"><input type="button" value="Calculate BMI" name="btnButtton" id="btnButtton"></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        <br><br><footer id="ftrclr" ><font color="white">&copy;Copyright 2021 - Healthy Diet</font></footer>
+        <script>
+            
+            let saturation = document.getElementById("cmdopsn");
+            let fullName = document.getElementById("txtName");
+            let initial = document.getElementById("txtInitial");
+            let address = document.getElementById("txtArea1");
+            let age = document.getElementById("txtAge");
+            let height = document.getElementById("txtHeight");
+            let weight = document.getElementById("txtWeight");
+            let bmi = document.getElementById("txtBmi");
+        
+        
+            //document.getElementById("txtBmi").innerHTML =bmi;
+            let description = document.getElementById("txtArea2");
+            let calculatButten = document.getElementById("btnButtton");
+// document.getElementById("txtBmi");
+
+            calculatButten.addEventListener("click",function(e){saturation1();})
+            calculatButten.addEventListener("click",function(e){FindName();})
+            calculatButten.addEventListener("click",function(e){initial1();})
+            calculatButten.addEventListener("click",function(e){Findaddress();})
+            calculatButten.addEventListener("click",function(e){FindAge();})
+            calculatButten.addEventListener("click",function(e){FindHeight();})
+            calculatButten.addEventListener("click",function(e){FindWeight();})
+            calculatButten.addEventListener("click",function(e){CalculateBMI();})
+            calculatButten.addEventListener("click",function(e){FindDescription();})
+            
+
+            
+            
+            function saturation1()
+            {
+                console.log(saturation.value);
+                if(saturation.value==="")
+                {
+                    alert("Blank Saturation is not allowed ");
+                }
+                else if(saturation.value=="---Select---")
+                {
+                    alert("Blank Saturation is not allowed ");
+                }
+            }
+
+            function FindName()
+            {
+                console.log(fullName.value);
+                if(fullName.value==="")
+                {
+                    alert("Blank Full Name is not allowed ");
+                }
+            }
+
+            function initial1()
+            {
+                console.log(initial.value);
+                if(initial.value==="")
+                {
+                    alert("Blank Initial is not allowed ");
+                }
+                
+            }
+
+
+            function Findaddress()
+            {
+                console.log(address.value);
+                if(address.value==="")
+                {
+                    alert("Blank Address is not allowed ");
+                }
+            }
+
+            function FindAge()
+            {
+                console.log(age.value);
+                if(age.value==="")
+                {
+                    alert("Blank Age is not allowed ");
+                }
+            }
+
+            function FindHeight()
+            {
+                console.log(height.value);
+                if(height.value==="")
+                {
+                    alert("Blank Height is not allowed ");
+                }
+            }
+
+            function FindWeight()
+            {
+                console.log(weight.value);
+                if(weight.value==="")
+                {
+                    alert("Blank Weight is not allowed ");
+                }
+                else if((saturation.value ===" Mr" ||saturation.value === "Dr" || saturation.value ==="Prof ") && weight.value<=20.7)
+                {
+                    alert("Underweight for men");
+                }
+                else if((saturation.value === "Miss" ||saturation.value === "Mrs") && weight.value<=19.1)
+                {
+                    alert("Underweight for women");
+                }
+
+                else if((saturation.value == "Mr" ||saturation.value === "Dr" ||saturation.value ==="Prof" ) &&weight.value>20.7 && weight.value<= 26.4)
+                {
+                    alert("Ideal weight for men");
+                }
+                else if((saturation.value == "Miss"||saturation.value === "Mrs") && weight.value>19.1 && weight.value <= 25.8)
+                {
+                    alert("Ideal weight for women ");
+                }
+
+                else if((saturation.value == "Mr" ||saturation.value === "Dr" || saturation.value ==="Prof" ) &&weight.value>26.4 && weight.value<= 27.8)
+                {
+                    alert("Marginally overweigh for men");
+                }
+                else if((saturation.value == "Miss"|| saturation.value ==="Mrs") && weight.value>25.8 && weight.value <= 27.3)
+                {
+                    alert("Marginally overweigh for women ");
+                }
+
+                else if((saturation.value == "Mr" || saturation.value ==="Dr" ||saturation.value ==="Prof" ) &&weight.value>27.8 && weight.value<= 31.3)
+                {
+                    alert(" overweigh for men");
+                }
+                else if((saturation.value == "Miss"||saturation.value === "Mrs") && weight.value>27.3 && weight.value <= 32.2)
+                {
+                    alert(" overweigh for women ");
+                }
+
+                else if((saturation.value == "Mr" || saturation.value ==="Dr" ||saturation.value ==="Prof" ) &&weight.value>31.1 && weight.value<= 45.4)
+                {
+                    alert("	Very  overweigh for men");
+                }
+                else if((saturation.value == "Miss"||saturation.value ==="Mrs") && weight.value>32.2 && weight.value <= 44.8)
+                {
+                    alert("Very  overweigh for women ");
+                }
+
+                else if((saturation.value == "Mr" ||saturation.value === "Dr" ||saturation.value ==="Prof" ) && weight.value>45.4  )
+                {
+                    alert("Extremely obese for men");
+                }
+                else if((saturation.value == "Miss"|| saturation.value ==="Mrs") && weight.value > 44.8)
+                {
+                    alert("	Extremely obese for weigh for women ");
+                }
+
+
+            }
+
+            function CalculateBMI()
+            {
+                
+                console.log(Number(weight.value) , Number(height.value)) ;             
+                let bmiValue =Number((Number(weight.value) / ((Number(height.value) * Number(height.value)) / 10000)).toFixed(2));
+                alert(bmiValue);
+
+                console.log(bmi.value);
+                bmi.value=bmiValue;
+                if(bmi.value==="")
+                {
+                    alert("Blank BMI is not allowed ");
+                }
+            }
+
+            function FindDescription()
+            {
+                console.log(description.value);
+                if(description.value==="")
+                {
+                    alert("Blank Description is not allowed ");
+                }
+            }
+
+            
+
+        </script>
+    </body>
+</html>
